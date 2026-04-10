@@ -1,0 +1,19 @@
+Trabalho sobre o App Local Eats:
+
+7.Entrega da atividade
+1.Lista de problemas identificados no produto?
+R: Atuar para ajudar na hora de pagamento e nos pedidos do app, como uma forma de não demorar no processo de agilidade e na forma de uso também. 
+       2.Atributos de qualidade possivelmente afetados?
+       R:
+       3.Justificativas técnicas para cada relação identificada
+__________________________________________________________________________________________________________________________________________________
+8. Modelo de entrega sugerido
+
+Problema identificado        |	Atributo de qualidade afetado |	Justificativa técnica
+Lentidão em horários de pico |   Atributo da ISO/IEC 25010    | Tempo de resposta elevado prejudica …
+Adequação Funcional          |	Atributo da ISO/IEC 25000	    | Capacidade de fornecer funções que atendam as necessidades declaradas.
+Confiabilidade               |	Atributo da ISO/IEC 25000	    | Capacidade do software de manter seu nivel de desempenho.
+Eficiência de desempenho	   |     ----------------	          |  Desempenho relativo á  qualidade de recursos.
+Usabilidade                  |    	------------------	      |     Grau em que um produto pode ser usado por usuários.
+		
+		
