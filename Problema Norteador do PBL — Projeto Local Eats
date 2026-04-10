@@ -11,9 +11,9 @@ ________________________________________________________________________________
 
 Problema identificado        |	Atributo de qualidade afetado |	Justificativa técnica
 Lentidão em horários de pico |   Atributo da ISO/IEC 25010    | Tempo de resposta elevado prejudica …
-Adequação Funcional          |	Atributo da ISO/IEC 25000	    | Capacidade de fornecer funções que atendam as necessidades declaradas.
-Confiabilidade               |	Atributo da ISO/IEC 25000	    | Capacidade do software de manter seu nivel de desempenho.
-Eficiência de desempenho	   |     ----------------	          |  Desempenho relativo á  qualidade de recursos.
+Adequação Funcional          |	Atributo da ISO/IEC 25000	  | Capacidade de fornecer funções que atendam as necessidades declaradas.
+Confiabilidade               |	Atributo da ISO/IEC 25000	  | Capacidade do software de manter seu nivel de desempenho.
+Eficiência de desempenho	 |     ----------------	          |  Desempenho relativo á  qualidade de recursos.
 Usabilidade                  |    	------------------	      |     Grau em que um produto pode ser usado por usuários.
 		
 		
