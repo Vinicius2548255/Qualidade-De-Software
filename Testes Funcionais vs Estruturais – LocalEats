@@ -1,0 +1,97 @@
+Trabalho sobre o App Local Eats:
+____________________________________________________________________________________________________________________________________________________________
+LocalEats
+ Integrantes do Grupo
+Vinicius Dias Soares
+Nome 2
+Nome 3
+Nome 4
+_____________________________________________________________________________________________________________________________________________________________
+ 1. Funcionalidade escolhida
+
+Funcionalidade selecionada:
+Login de usuário
+
+Descrição da funcionalidade:
+Permite que o usuário acesse sua conta informando e-mail e senha.
+
+O que o usuário espera:
+Que ao inserir os dados corretamente, ele consiga entrar no sistema, e caso contrário receba uma mensagem de erro.
+_____________________________________________________________________________________________________________________________________________________________
+ 2. Testes Caixa-Preta (Visão do Usuário)
+
+Quais testes vocês fariam sem conhecer o código?
+
+ Cenários de teste
+Cenário 1:
+E-mail e senha corretos → deve logar com sucesso
+Cenário 2:
+Senha incorreta → deve mostrar erro
+Cenário 3:
+E-mail não cadastrado → deve mostrar erro
+Cenário 4:
+Campos vazios → deve impedir o login
+ Possíveis erros identificados
+Permitir login com dados errados
+Não mostrar mensagem de erro
+Travar ao tentar logar
+Aceitar campos vazios
+_______________________________________________________________________________________________________________________________________________________________
+ 3. Testes Caixa-Branca (Visão do Sistema)
+
+Como essa funcionalidade poderia estar implementada internamente?
+
+ Lógica hipotética (pseudo-código ou descrição)
+function login(email, senha) {
+    if (email vazio ou senha vazio) {
+        return erro("Campos obrigatórios")
+    }
+
+    usuario = banco.buscarPorEmail(email)
+
+    if (usuario não existe) {
+        return erro("Usuário não encontrado")
+    }
+
+    if (usuario.senha != senha) {
+        return erro("Senha incorreta")
+    }
+
+    return sucesso("Login realizado")
+}
+ Situações a serem testadas
+Situação 1: validação de campos vazios
+Situação 2: comparação de senha
+Situação 3: busca no banco de dados
+ Possíveis erros identificados
+Não validar campos vazios
+Comparação de senha incorreta
+Falha na busca do usuário
+___________________________________________________________________________________________________________________________________________________________________
+ 4. Comparação entre as abordagens
+
+Qual a principal diferença entre testar sem ver o código e com acesso ao código?
+
+A caixa-preta testa o sistema como o usuário vê, enquanto a caixa-branca analisa a lógica interna do sistema.
+
+Que tipo de problema cada abordagem ajuda a encontrar?
+
+Caixa-preta:
+Erros de funcionamento e experiência do usuário
+
+Caixa-branca:
+Erros na lógica do código e falhas internas
+___________________________________________________________________________________________________________________________________________________________________
+ 5. Reflexão no contexto do LocalEats
+
+Qual abordagem parece mais importante neste momento do projeto?
+
+A caixa-preta, pois garante que o sistema funcione corretamente para o usuário final.
+
+Apenas uma abordagem seria suficiente? Por quê?
+
+Não, porque uma não substitui a outra. É necessário usar ambas para garantir qualidade completa.
+
+ 
+
+O grupo aprendeu que os testes são fundamentais para garantir a qualidade do sistema. A combinação de testes caixa-preta e caixa-branca permite identificar tanto erros visíveis ao usuário quanto falhas internas no código.
