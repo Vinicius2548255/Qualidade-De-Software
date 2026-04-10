@@ -1,0 +1,73 @@
+Trabalho sobre o App Local Eats:
+___________________________________________________________________________________________________________________________________________________________
+Estratégia Inicial de Testes – LocalEats
+____________________________________________________________________________________________________________________________________________________________
+1. Funcionalidades
+    • Login 
+    • Cadastro de usuário 
+    • Cadastro de restaurantes 
+    • Listagem de restaurantes 
+    • Realização de pedidos 
+    • Favoritos 
+_____________________________________________________________________________________________________________________________________________________________
+2. Níveis de Teste
+Funcionalidade: Login
+    • Unitário: validar senha e campos obrigatórios 
+    • Integração: verificar comunicação com banco 
+    • Sistema: usuário faz login completo 
+    • Aceitação: usuário entra no sistema sem erro 
+
+Funcionalidade: Cadastro de usuário
+    • Unitário: validar campos (nome, email, senha) 
+    • Integração: salvar dados no banco 
+    • Sistema: usuário consegue se cadastrar 
+    • Aceitação: usuário cria conta com sucesso 
+
+Funcionalidade: Cadastro de restaurantes
+    • Unitário: validar dados do restaurante 
+    • Integração: salvar restaurante no banco 
+    • Sistema: restaurante aparece na listagem 
+    • Aceitação: cadastro realizado corretamente 
+
+Funcionalidade: Listagem de restaurantes
+    • Unitário: validar retorno da lista 
+    • Integração: buscar dados do banco 
+    • Sistema: exibir lista na tela 
+    • Aceitação: usuário visualiza restaurantes disponíveis 
+
+Funcionalidade: Realização de pedidos
+    • Unitário: validar itens do pedido 
+    • Integração: salvar pedido no banco 
+    • Sistema: pedido é finalizado corretamente 
+    • Aceitação: usuário realiza pedido sem erro 
+
+Funcionalidade: Favoritos
+    • Unitário: validar ação de favoritar 
+    • Integração: salvar favorito no banco 
+    • Sistema: restaurante aparece como favorito 
+    • Aceitação: usuário consegue favoritar itens 
+__________________________________________________________________________________________________________________________________________________________________
+3. Prioridades e Riscos
+Alta prioridade:
+    • Login → sem login o usuário não usa o sistema 
+    • Realização de pedidos → funcionalidade principal 
+Justificativa:
+Falhas nessas áreas impedem o uso da plataforma e impactam diretamente o negócio.
+
+Baixa prioridade:
+    • Favoritos → não impede uso 
+Justificativa:
+Não é essencial para o funcionamento principal do sistema.
+__________________________________________________________________________________________________________________________________________________________________
+4. Pirâmide de Testes
+    • Maior foco: Testes unitários 
+    • Médio foco: Testes de integração 
+    • Menor foco: Testes de sistema/aceitação 
+Justificativa:
+Testes unitários são mais rápidos e baratos, garantindo qualidade desde o início. Testes de integração validam comunicação entre partes do sistema, enquanto testes de sistema são mais complexos e demorados.
+___________________________________________________________________________________________________________________________________________________________________
+5. Testes em Produção
+    • Uso de monitoramento de erros (logs) 
+    • Aplicar testes A/B e feedback de usuários 
+Justificativa:
+Permite identificar problemas reais após o lançamento e melhorar continuamente o sistema com base no comportamento dos usuários.
