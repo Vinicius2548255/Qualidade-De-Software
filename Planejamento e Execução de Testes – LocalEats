@@ -1,0 +1,128 @@
+## Aula 6 – Planejamento e Execução de Testes
+________________________________________________________________________________________________________________________________________________________
+## Disciplina: Qualidade de Software
+## Projeto: LocalEats
+## Integrantes do grupo:
+
+* Vinicius Dias Soares
+______________________________________________________________________________________________________________________________________________________________
+## 1.1 Objetivo
+
+Validar as principais funcionalidades do sistema LocalEats, garantindo que o usuário consiga realizar ações como cadastro, 
+busca de restaurantes e pedidos sem erros.
+______________________________________________________________________________________________________________________________________________________________
+## 1.2 Escopo
+O que será testado
+* Login e cadastro de usuários
+* Busca de restaurantes
+* Realização de pedidos
+* Avaliação de restaurantes
+
+## O que NÃO será testado
+* Integração com sistemas de pagamento externos
+* Performance em grande escala
+_________________________________________________________________________________________________________________________________________________________________
+## 1.3 Funcionalidades selecionadas
+* Login/Cadastro
+* Busca de restaurantes
+* Pedido
+* Avaliação
+___________________________________________________________________________________________________________________________________________________________________
+## 1.4 Estratégia de Testes
+* Tipos de teste:
+  * (X) Funcional
+  * (X) Usabilidade
+* Abordagem:
+Testes manuais baseados em cenários simulando o uso real do usuário.
+__________________________________________________________________________________________________________________________________________________________________
+## 1.5 Responsáveis
+|----------------|:-----------------:|
+|    Nome        | Responsabilidade  |
+|----------------|:-----------------:|
+| Vinicius Soares| Testes de login   |
+|----------------|:-----------------:|
+| Vinicius Soares| Testes de pedidos |
+|----------------|:-----------------:|
+| Vinicius Soares| Testes de busca   |
+|----------------|:-----------------:|
+_________________________________________________________________________________________________________________________________________________________________
+## 2. Casos de Teste
+## CT-01 – Login com dados válidos
+Pré-condição: Usuário já cadastrado
+#Passos:
+1. Acessar tela de login.
+2. Inserir email e senha válidos
+3. Clicar em entrar
+Resultado esperado:
+Usuário é redirecionado para a tela inicial
+__________________________________________________________________________________________________________________________________________________________________
+## CT-02 – Login com senha inválida
+Pré-condição: Usuário cadastrado
+#Passos:
+1. Inserir email correto
+2. Inserir senha errada
+3. Clicar em entrar
+Resultado esperado:
+Mensagem de erro exibida
+__________________________________________________________________________________________________________________________________________________________________
+## CT-03 – Buscar restaurante
+Pré-condição: Usuário logado
+#Passos:
+1. Digitar nome do restaurante
+2. Clicar em buscar
+Resultado esperado:
+Lista de restaurantes exibida
+___________________________________________________________________________________________________________________________________________________________________
+## CT-04 – Realizar pedido
+Pré-condição: Usuário logado
+#Passos:
+1. Selecionar restaurante
+2. Escolher produto
+3. Finalizar pedido
+Resultado esperado:
+Pedido realizado com sucesso
+___________________________________________________________________________________________________________________________________________________________________
+## CT-05 – Avaliar restaurante
+Pré-condição: Pedido concluído
+#Passos:
+1. Acessar pedido
+2. Dar nota
+3. Enviar avaliação
+Resultado esperado:
+Avaliação registrada
+___________________________________________________________________________________________________________________________________________________________________
+## 3. Execução dos Testes
+|     ID        |    Resultado    |    Evidência      |
+|-------------- |-----------------|-------------------|
+|    CT-01      |     Passou      |  Login funcionou  |
+|-------------- |---------------- |-------------------|
+|    CT-02      |     Passou      |  Mensagem exibida |
+|-------------- |---------------- |------------------ |
+|    CT-03      |     Passou      |  Lista correta    |
+|-------------- |---------------- |------------------ |
+|    CT-04      |     Falhou      |  Erro ao finalizar|
+|---------------|-----------------|-------------------|
+|    CT-05      |     Passou      |  Avaliação salva  |
+_______________________________________________________________________________________________________________________________________________________________________
+## 4. Análise dos Resultados
+*  Testes executados: 5
+*  Passaram: 4
+*  Falharam: 1
+## Problemas encontrados
+*  Erro ao finalizar pedido
+*  Lentidão na busca
+*  Layout desorganizado em mobile
+_________________________________________________________________________________________________________________________________________________________________________
+## 5. Reflexão
+*  Sim, ajudou a organizar porque definiu o que testar
+*  Sim, o erro no pedido só apareceu na prática
+*  Melhoraríamos com mais testes automatizados
+__________________________________________________________________________________________________________________________________________________________________________
+##  Conclusão
+A funcionalidade é parcialmente aceitável, mas precisa corrigir o erro de pedido.
+___________________________________________________________________________________________________________________________________________________________________________
+##6. Conclusão Geral
+*  Qualidade geral: boa
+*  Pontos positivos: fácil uso
+*  Problemas: erro no pedido
+*  Impressão: testes foram essenciais
