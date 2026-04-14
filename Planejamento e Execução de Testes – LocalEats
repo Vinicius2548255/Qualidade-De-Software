@@ -53,6 +53,10 @@ Pré-condição: Usuário já cadastrado
 1. Acessar tela de login.
 2. Inserir email e senha válidos
 3. Clicar em entrar
+Dados de entrada:
+Usuário: viniciusdiassoares3@gmail.com 
+senha:123456.
+
 Resultado esperado:
 Usuário é redirecionado para a tela inicial
 __________________________________________________________________________________________________________________________________________________________________
