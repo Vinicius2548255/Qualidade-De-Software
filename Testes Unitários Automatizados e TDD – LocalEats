@@ -1,0 +1,280 @@
+# Aula 9 – Testes Unitários e TDD
+
+## 👥 Integrantes
+
+* Vinicius Dias Soares
+
+---
+
+# 📁 Estrutura do Projeto
+
+```bash
+.
+├── src/
+│   ├── pedido.py
+│   ├── desconto.py
+│   └── entrega.py
+└── tests/
+    ├── test_pedido.py
+    ├── test_desconto.py
+    └── test_entrega.py
+```
+
+---
+
+# 🔹 1. Funcionalidades Escolhidas
+
+O grupo desenvolveu três funcionalidades principais para um sistema de pedidos, utilizando Testes Unitários e a metodologia TDD (Test Driven Development).
+
+Cada integrante ficou responsável por uma regra de negócio específica.
+
+---
+
+# 👤 Integrante 1 – Cálculo do Total do Pedido
+
+## 📄 Arquivos
+
+* Implementação: `/src/pedido.py`
+* Testes: `/tests/test_pedido.py`
+
+## 📝 Descrição
+
+Essa funcionalidade realiza a soma dos itens do pedido e verifica se o valor mínimo exigido pelo sistema foi atingido.
+
+## ⚙️ Regras de Negócio
+
+* O total do pedido deve ser calculado somando todos os itens.
+* O pedido precisa atingir o valor mínimo de compra.
+* Caso o valor seja inferior ao mínimo, o sistema deve retornar erro.
+
+## 💻 Exemplo de Implementação
+
+```python
+# pedido.py
+
+def calcular_total(itens, valor_minimo=20):
+    total = sum(itens)
+
+    if total < valor_minimo:
+        raise ValueError("Pedido abaixo do valor mínimo")
+
+    return total
+```
+
+## 🧪 Testes Unitários
+
+```python
+# test_pedido.py
+
+import pytest
+from src.pedido import calcular_total
+
+
+def test_total_valido():
+    assert calcular_total([10, 15]) == 25
+
+
+def test_total_abaixo_minimo():
+    with pytest.raises(ValueError):
+        calcular_total([5, 5])
+```
+
+## 🔄 Processo TDD
+
+### 🔴 Red
+
+Os testes foram criados antes da implementação da função.
+Inicialmente os testes falharam porque a função ainda não existia.
+
+### 🟢 Green
+
+Foi criada uma implementação simples apenas para fazer os testes passarem.
+
+### 🔵 Refactor
+
+O código foi melhorado com validação do valor mínimo e organização da lógica.
+
+## ✅ Resultado
+
+Todos os testes passaram com sucesso.
+
+---
+
+# 👤 Integrante 2 – Aplicação de Desconto
+
+## 📄 Arquivos
+
+* Implementação: `/src/desconto.py`
+* Testes: `/tests/test_desconto.py`
+
+## 📝 Descrição
+
+Essa funcionalidade aplica um desconto percentual sobre o valor total do pedido.
+
+## ⚙️ Regras de Negócio
+
+* O percentual deve estar entre 0% e 100%.
+* O valor final não pode ser negativo.
+* Percentuais inválidos devem gerar erro.
+
+## 💻 Exemplo de Implementação
+
+```python
+# desconto.py
+
+def aplicar_desconto(valor, percentual):
+    if percentual < 0 or percentual > 100:
+        raise ValueError("Percentual inválido")
+
+    desconto = valor * (percentual / 100)
+    return valor - desconto
+```
+
+## 🧪 Testes Unitários
+
+```python
+# test_desconto.py
+
+import pytest
+from src.desconto import aplicar_desconto
+
+
+def test_desconto_valido():
+    assert aplicar_desconto(100, 10) == 90
+
+
+def test_percentual_invalido():
+    with pytest.raises(ValueError):
+        aplicar_desconto(100, 150)
+```
+
+## 🔄 Processo TDD
+
+### 🔴 Red
+
+Os testes falharam inicialmente devido à ausência da função.
+
+### 🟢 Green
+
+Foi criada uma lógica simples para calcular o desconto.
+
+### 🔵 Refactor
+
+O código foi refatorado para incluir validação de percentual e melhoria da legibilidade.
+
+## ✅ Resultado
+
+Todos os testes foram executados com sucesso.
+
+---
+
+# 👤 Integrante 3 – Cálculo da Taxa de Entrega
+
+## 📄 Arquivos
+
+* Implementação: `/src/entrega.py`
+* Testes: `/tests/test_entrega.py`
+
+## 📝 Descrição
+
+Essa funcionalidade calcula a taxa de entrega com base na distância informada pelo usuário.
+
+## ⚙️ Regras de Negócio
+
+* Até 3km → taxa fixa.
+* Acima de 3km → cobrança adicional por quilômetro.
+* Distância negativa deve gerar erro.
+
+## 💻 Exemplo de Implementação
+
+```python
+# entrega.py
+
+def calcular_entrega(distancia):
+    if distancia < 0:
+        raise ValueError("Distância inválida")
+
+    if distancia <= 3:
+        return 5
+
+    adicional = (distancia - 3) * 2
+    return 5 + adicional
+```
+
+## 🧪 Testes Unitários
+
+```python
+# test_entrega.py
+
+import pytest
+from src.entrega import calcular_entrega
+
+
+def test_taxa_fixa():
+    assert calcular_entrega(2) == 5
+
+
+def test_distancia_negativa():
+    with pytest.raises(ValueError):
+        calcular_entrega(-1)
+```
+
+## 🔄 Processo TDD
+
+### 🔴 Red
+
+Os testes falharam porque a funcionalidade ainda não estava implementada.
+
+### 🟢 Green
+
+Foi criada uma lógica inicial para retornar a taxa fixa.
+
+### 🔵 Refactor
+
+A implementação foi melhorada adicionando validações e cálculo adicional por distância.
+
+## ✅ Resultado
+
+Todos os testes passaram corretamente.
+
+---
+
+# 🔹 2. Reflexão Sobre o Desenvolvimento
+
+## ❓ Foi difícil escrever os testes antes do código?
+
+Sim. No início foi necessário mudar a forma de pensar o desenvolvimento, planejando primeiro os testes e depois a implementação.
+
+---
+
+## ❓ O TDD ajudou no desenvolvimento?
+
+Sim. A metodologia ajudou a organizar melhor a lógica do sistema e identificar erros rapidamente.
+
+---
+
+## ❓ Os testes aumentaram a confiança no código?
+
+Sim. Os testes garantem que as funcionalidades continuem funcionando corretamente após alterações.
+
+---
+
+## ❓ O que poderia ser melhorado?
+
+* Adicionar mais cenários de teste.
+* Melhorar a organização dos arquivos.
+* Criar testes para situações extremas.
+
+---
+
+## ❓ Como isso ajuda no projeto?
+
+O uso de testes unitários e TDD aumenta a qualidade do sistema, reduz erros e facilita futuras manutenções.
+
+---
+
+# ✅ Conclusão
+
+O trabalho demonstrou a importância dos testes unitários no desenvolvimento de software. A aplicação da metodologia TDD permitiu criar funcionalidades mais seguras, organizadas e fáceis de manter.
+
+Além disso, os testes ajudaram a validar as regras de negócio e aumentaram a confiabilidade do sistema.
