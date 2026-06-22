@@ -3,9 +3,6 @@
 ## Integrantes
 
 - Vinicius Dias Soares
-- Integrante 2
-- Integrante 3
-- Integrante 4
 
 ---
 
